@@ -1,0 +1,54 @@
+GET http://localhost:3003/api/blogs
+# Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxIiwiaWQiOiI2MzNjNDQwMDJlMmQzNmNkNTU1ZTJkOTkiLCJpYXQiOjE2NjQ4OTM5NjB9.wwSF6nPX8SmscxsF60wnQejEij_hiyH7_Lk9U4vi5aM
+
+
+###
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxIiwiaWQiOiI2MzNjNTUyNTYyZmVhZGQ1MThmM2RmOGEiLCJpYXQiOjE2NjQ4OTgzNDN9.7hNC01lKms-ksIzdF3HgDyoXxZx7fk-vpIXreEfo0r8
+
+{
+    "title": "nowhere",
+    "author": "Nil geyman",
+    "url": "http://nil.gey",
+    "likes": 6
+}
+
+###
+DELETE http://localhost:3003/api/blogs/633c553862eadd518f3df8e
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxIiwiaWQiOiI2MzNjNTUyNTYyZmVhZGQ1MThmM2RmOGEiLCJpYXQiOjE2NjQ4OTgzNDN9.7hNC01lKms-ksIzdF3HgDyoXxZx7fk-vpIXreEfo0r8
+
+
+###
+PUT http://localhost:3003/api/blogs/633826060963e1f25a6ef326
+Content-Type: application/json
+
+{
+    "title": "nowhere",
+    "author": "Nil geyman",
+    "url": "http://nil.gey",
+    "likes": 90
+}
+
+###
+POST http://localhost:3003/api/users/auth
+Content-Type: application/json
+
+{
+    "username": "test1",
+    "name": "newUser1",
+    "password": "test1"
+}
+
+###
+POST http://localhost:3003/api/users/login
+Content-Type: application/json
+
+{
+    "username": "test1",
+    "password": "test1"
+}
+
+###
+GET http://localhost:3003/api/users
+
