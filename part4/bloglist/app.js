@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const blogsRouter = require('./controllers/blogs')
 const usersRouter = require('./controllers/users')
 const middleware = require('./utils/middleware')
-const { MONGO_URL } = require('./utils/config')
+const { MONGO_URL, NODE_ENV } = require('./utils/config')
 
 const app = express()
 
@@ -22,6 +22,10 @@ app.use(middleware.tokenExtractor)
 
 app.use('/api/blogs', blogsRouter)
 app.use('/api/users', usersRouter)
+if (NODE_ENV === 'test') {
+  const testingRouter = require('./controllers/testing')
+  app.use('/api/testing', testingRouter)
+}
 
 
 app.use(middleware.unknownEndpoint)

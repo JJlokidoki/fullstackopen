@@ -5,6 +5,9 @@ const middleware = require('../utils/middleware')
 
 blogRouter.get('/', async (request, response) => {
   const res = await Blog.find({}).populate('user', { username: 1, name:1, id: 1 })
+  if (!res.length) {
+    response.json([])
+  }
   response.json(res)
 })
 
